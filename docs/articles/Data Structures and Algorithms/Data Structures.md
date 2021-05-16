@@ -6,6 +6,7 @@
 
 > 列表是一组有序的数据。每个列表 中的数据项成为**元素**。
 
+### 实现
 ```javascript
 function List() {
 	this.listSize = 0
@@ -59,8 +60,6 @@ function List() {
 
 
 
-
-
 - 优点：
   1. 按照索引查询元素速度快
   2. 按照索引遍历数组方便
@@ -73,9 +72,13 @@ function List() {
 
 
 
+
+
 ## 栈
 
 > 栈是一种特殊的列表，栈内的元素只能通过列表的一端访问，这一端称为**栈顶**。栈的结构就像一个集装箱，越先放进去的东西越晚才能拿出来，所以，栈常应用于实现递归功能方面的场景，例如斐波那契数列。栈被称为一种后入先出（LIFO，Last In First Out）的数据结构。
+
+### 实现
 
 ```javascript
 function Stack() {
@@ -108,4 +111,78 @@ function Stack() {
   }
 }
 ```
+
+
+
+### 使用
+
+#### 判断字符串是否为回文
+
+```javascript
+function isPalindrome(word) {
+  var s = new Stack()
+  for(var i = 0; i < word.length; i++) {
+    s.push(word[i])
+  }
+  var rword = ''
+  while(s.length() > 0) {
+    rword += s.pop()
+  }
+  return word === rword
+}
+
+isPalindrome('Spider-Man') //false
+isPalindrome('dad') //true
+```
+
+
+
+
+
+## 队列
+
+> **队列**是一种列表，不同的是队列只能在队尾插入元素，在队首删除元素。队列用于存储按顺序排列的数据，先进先出（FIFO, First In First Out）。队列被用在很多地方，比如提交操作系统执行的一系列进程、打印任务池等。向队列中插入新元素叫做**入队**，删除操作叫做**出队**。
+
+
+
+### 实现
+
+```javascript
+function Queue() {
+  this.dataStore = []
+  this.enqueue = enqueue
+  this.dequeue = dequeue
+  this.front = front
+  this.back = back
+  this.toString = toString
+  this.empty = empty
+
+  function enqueue(element) {
+    this.dataStore.push(element)
+  }
+  function dequeue() {
+    return this.dataStore.shift()
+  }
+  function front() {
+    return this.dataStore[0]
+  }
+  function back() {
+    return this.dataStore[this.dataStore.length - 1]
+  }
+  function toString() {
+    var retStr = ''
+    for(var i = 0; i < this.dataStore.length; i++) {
+      retStr += this.dataStore[i] + '\n'
+    }
+    return retStr
+  }
+  function empty() {
+    return this.dataStore.length === 0
+  }
+}
+```
+
+
+
+### 使用
 
