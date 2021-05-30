@@ -1,11 +1,5 @@
 # JAVASCRIPT
 
-## 注意事项
-
----
-
-![image-20200330151813518](C:\Users\MZHlo\AppData\Roaming\Typora\typora-user-images\image-20200330151813518.png)
-
 
 
 ## 类型转换
