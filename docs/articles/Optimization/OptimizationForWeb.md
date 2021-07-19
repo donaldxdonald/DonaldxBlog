@@ -12,7 +12,7 @@
 4. 遍历Render(渲染)树开始布局， 计算每一个节点的位置大小信息
 5. 将渲染树每个节点绘制到屏幕上
 
-![](https://mmbiz.qpic.cn/mmbiz_png/YBFV3Da0NwvSR4dG1qENWeQC4gTDtkRA4xTPdXNn7uib6tQgoNeQicVYvCesUGncJk9tBHRnFTnaStXpHZHRkanA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![](https://img2.baidu.com/it/u=1466143860,3781040883&fm=26&fmt=auto&gp=0.jpg)
 
 **重排**
 
@@ -93,7 +93,7 @@ el.style.cssText = 'left: 10px;top: 10px; width: 20px';
 
 虚拟列表是一种用来优化长列表的技术。它可以保证在列表元素不断增加，或者列表元素很多的情况下，依然拥有很好的滚动、浏览性能。它的核心思想在于：只渲染可见区域附近的列表元素。下图左边就是虚拟列表的效果，可以看到只有视口内和临近视口的上下区域内的元素会被渲染。
 
-![](https://mmbiz.qpic.cn/mmbiz_png/YBFV3Da0NwvSR4dG1qENWeQC4gTDtkRAibtibcICqZ8Ecw2L5w3kWnxdp1tGgjArjPxuN0mTmq3rMYmzsTEO1DxA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![](https://user-gold-cdn.xitu.io/2019/10/29/16e15197c273cbd9?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 
 具体实现步骤如下所示：
 
