@@ -89,7 +89,7 @@ el.style.cssText = 'left: 10px;top: 10px; width: 20px';
 
 ### 2. 长列表优化
 
-#### 1.1 实现虚拟列表
+#### 2.1 实现虚拟列表
 
 虚拟列表是一种用来优化长列表的技术。它可以保证在列表元素不断增加，或者列表元素很多的情况下，依然拥有很好的滚动、浏览性能。它的核心思想在于：只渲染可见区域附近的列表元素。下图左边就是虚拟列表的效果，可以看到只有视口内和临近视口的上下区域内的元素会被渲染。
 
@@ -120,5 +120,43 @@ visibleData = listData.slice(startIndex, endIndex + 1)  // 列表显示数据
 
 // 当滚动后，由于渲染区域相对于可视区域已经发生了偏移，此时我需要获取一个偏移量startOffset，通过样式控制将渲染区域偏移至可视区域中。
 startOffset = scrollTop - (scrollTop % itemSize)
+```
+
+
+
+## 时间切片
+
+> 核心：把任务切分。如果任务不能在50毫秒内执行完，那么为了不阻塞主线程，这个任务应该**让出主线程的控制权**，使浏览器可以处理其他任务。让出控制权意味着停止执行当前任务，让浏览器去执行其他任务，随后再回来继续执行没有执行完的任务。所以时间切片的目的是不阻塞主线程，而实现目的的技术手段是将一个长任务拆分成很多个不超过50ms的小任务分散在宏任务队列中执行。
+
+
+
+### 配合Generator使用
+
+> ES6带来了迭代器的概念，并提供了生成器Generator函数用来生成迭代器对象，Generator函数提供了`yield`关键字，这个关键字可以让函数暂停执行。然后通过迭代器对象的`next`方法让函数继续执行。
+
+```typescript
+// 定义时间切片方法
+function timeSlicing(gen: any) {
+  if (typeof gen === 'function') gen = gen()
+  return function next() {
+    const start = performance.now()
+    let res = null
+    do {
+      res = gen.next()
+    } while (!res.done && performance.now() - start < 25)
+
+    if (res.done) return
+    setTimeout(next)
+  }
+}
+
+// 使用
+function* handleData(){
+    for(let i = 0; i < 10000; i++) {
+		console.log('i', i)
+        if (i % 100 === 0) yield
+    }
+}
+timeSlicing(handleData)()
 ```
 
