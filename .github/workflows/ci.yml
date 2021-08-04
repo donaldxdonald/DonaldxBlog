@@ -8,9 +8,6 @@ on:
   push:
     branches: [ master ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -33,9 +30,9 @@ jobs:
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.TENCENTCLOUD }}
+          SSH_PRIVATE_KEY: ${{ secrets.REMOTE_SSH_PUBLIC_KEY }}
           ARGS: '-rltgoDzvO --delete'
-          SOURCE: ./docs/.vuepress/dist
-          REMOTE_HOST: '106.52.57.200'
-          REMOTE_USER: root
-          TARGET: /home/dxd/donaldxdonald/web/article
+          SOURCE: "./docs/.vuepress/dist"
+          REMOTE_HOST: ${{ secrets.REMOTE_SERVER }}
+          REMOTE_USER: "root"
+          TARGET: "/home/dxd/donaldxdonald/web/article"
