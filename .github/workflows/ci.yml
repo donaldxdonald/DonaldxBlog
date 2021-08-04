@@ -35,7 +35,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.TENCENTCLOUD }}
           ARGS: '-rltgoDzvO --delete'
-          SOURCE: dist
+          SOURCE: ./docs/.vuepress/dist
           REMOTE_HOST: '106.52.57.200'
           REMOTE_USER: root
           TARGET: /home/dxd/donaldxdonald/web/article
