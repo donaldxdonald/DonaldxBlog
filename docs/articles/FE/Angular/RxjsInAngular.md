@@ -40,3 +40,66 @@ class MyGenericComponent extends SomeFrameworkComponent {
 }
 ```
 
+
+
+### 创建一个DestroyService
+
+> via Twitter@Waterplea
+
+创建一个DestroyService，其他地方需要设置取消订阅时只需注入该服务，加入takeUntil就好了
+
+```typescript
+// 实现
+@Injectable()
+export class DestroyService extends Observable<void> implements OnDestroy {
+	private readonly life$ = new Subject<void>()
+    
+    constructor() {
+		super(subscriber => this.life$.subscribe(subscriber))
+    }
+    
+    ngOnDestroy() {
+        this.life$.next()
+        this.life$.complete()
+    }
+}
+```
+
+```typescript
+// 使用
+@Directive({
+  selector: '[sticky]',
+  providers: [DestroyService]
+})
+export class StickyDirective {
+
+  constructor(
+    @Inject(WINDOW) windowRef: Window,
+      rd2: Renderer2,
+      destroy$: DestroyService,
+      { nativeElement }: ElementRef<HTMLElement>
+  ) {
+    fromEvent(windowRef, 'scroll')
+      .pipe(
+        map(() => windowRef.scrollY),
+        pairwise(),
+        map(([prev, next]) => next < THRESHOLD || prev > next),
+        distinctUntilChanged(),
+        // 使用destroy$判断是否进入OnDestroy了
+        takeUntil(destroy$),
+        startWith(true)
+      )
+      .subscribe(stuck => {
+        rd2.setAttribute(nativeElement, 'data-stuck', JSON.stringify(stuck))
+      })
+  }
+
+}
+```
+
+
+
+## 前后值一起处理
+
+*pairwise* - 将当前值和上一个值放进一个数组里返回
+
