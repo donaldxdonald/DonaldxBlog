@@ -17,8 +17,6 @@ axios.all([
 
 `axios.default.baseurl=''`
 
-![image-20200406160419133](C:\Users\MZHlo\AppData\Roaming\Typora\typora-user-images\image-20200406160419133.png)
-
 
 
 ## 模块封装

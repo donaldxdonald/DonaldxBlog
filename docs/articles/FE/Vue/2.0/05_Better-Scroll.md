@@ -29,7 +29,7 @@ const bs = new BScroll('', {
 
 ---
 
-![image-20200412151616886](C:\Users\MZHlo\AppData\Roaming\Typora\typora-user-images\image-20200412151616886.png)
+
 
 使用事件总线监听
 
@@ -48,4 +48,3 @@ const bs = new BScroll('', {
 
 + 防抖debounce/ 节流throttle
 
-![image-20200412192552071](C:\Users\MZHlo\AppData\Roaming\Typora\typora-user-images\image-20200412192552071.png)

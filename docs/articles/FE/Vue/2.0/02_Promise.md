@@ -1,11 +1,5 @@
 ## 什么是Promise
 
-![image-20200330134943299](C:\Users\MZHlo\AppData\Roaming\Typora\typora-user-images\image-20200330134943299.png)
-
-
-
-![image-20200402151127298](C:\Users\MZHlo\AppData\Roaming\Typora\typora-user-images\image-20200402151127298.png)
-
 
 
 ```javascript

@@ -44,11 +44,7 @@ const newrouter = new VueRouter({
 
 1. 创建路由组件
 2. 配置路由映射：组件和路由映射关系
-3. 使用路由：通过<router-link>和<router-view>
-
-![image-20200316182418606](C:\Users\MZHlo\AppData\Roaming\Typora\typora-user-images\image-20200316182418606.png)
-
-![image-20200316183958704](C:\Users\MZHlo\AppData\Roaming\Typora\typora-user-images\image-20200316183958704.png)
+3. 使用路由：通过<router-link></router-link>和<router-view></router-view>
 
 
 
@@ -147,7 +143,7 @@ router.beforeEach(to,from,next())
 </keep-alive>
 ```
 
-![image-20200319153333257](C:\Users\MZHlo\AppData\Roaming\Typora\typora-user-images\image-20200319153333257.png)
+
 
 
 
