@@ -35,4 +35,4 @@ jobs:
           SOURCE: "./docs/.vuepress/dist"
           REMOTE_HOST: ${{ secrets.REMOTE_SERVER }}
           REMOTE_USER: "root"
-          TARGET: "/home/dxd/blog/web"
+          TARGET: "/home/dxd/donaldxdonald/web/blog"
