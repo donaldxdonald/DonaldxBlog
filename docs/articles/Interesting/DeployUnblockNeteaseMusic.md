@@ -1,4 +1,9 @@
-# 网易云去灰
+---
+title: 网易云去灰
+date: 2021-09-27 23:50
+---
+
+
 
 > 部署 [@nondanee/UnblockNeteaseMusic](https://github.com/nondanee/UnblockNeteaseMusic) 在服务器，通过 clash 代理将网易云客户端请求导向服务器，从而达到去灰效果
 
