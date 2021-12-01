@@ -1,6 +1,11 @@
-## Docker Compose
+---
+title: Docker Compose
+date: 2020-10-16 21:22
+---
 
-> Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。
+
+
+> 定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。
 
 Compose 使用的三个步骤：
 

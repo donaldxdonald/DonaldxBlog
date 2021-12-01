@@ -1,4 +1,9 @@
-# Angular实践中的Tips
+---
+title: Angular实践中的Tips
+date: 2021-08-09 11:48
+---
+
+
 
 ## 自定义组件设置双向绑定
 
