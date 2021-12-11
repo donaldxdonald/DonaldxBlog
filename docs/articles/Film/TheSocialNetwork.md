@@ -37,6 +37,6 @@ date: 2021-12-11 16:00
 
    ![image-20211211221918863](https://raw.githubusercontent.com/donaldxdonald/DonaldxBlog/master/docs/articles/Film/TheSocialNetwork.assets/image-20211211221918863.png)
 
-2. Justin Timberland 比 Jesse Eisenberg 像 Mark 太多了！但是在 *BVS* 中看卷西又会自动调戏到 *The Social Network* 里哈哈哈。
+2. Justin Timberland 比 Jesse Eisenberg 像 Mark 太多了！但是在 *BVS* 中看卷西又会自动跳戏到 *The Social Network* 里哈哈哈。
 
 3. 最后 Mark 一直按 F5 重新 load 网页真的笑了，简直就是 Web 历史的眼泪啊。
