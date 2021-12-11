@@ -3,7 +3,7 @@ title: 迷人的 Twin Peaks，迷人的 大卫林奇
 date: 2020-08-16 10:40:05
 ---
 
-![twin peaks](https://bbsimg.maxjia.com//heybox/bbs/imgs/2020/08/16/341dfefd6439794da30ffee0c8083bdb)
+![image-20211211225014281](https://raw.githubusercontent.com/donaldxdonald/DonaldxBlog/master/docs/articles/Film/TwinPeaks.assets/image-20211211225014281.png)
 
 > "双峰镇，人人都在外遇，人人都是名侦探，人人都想插一脚，人人都以为自己在恋爱，大部分都是变态。"
 
